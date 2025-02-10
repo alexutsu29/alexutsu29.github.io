@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #response {
+            margin-top: 20px;
+        }
+        img {
+            margin-top: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Denisa, wanna be Alex's valentine?</h2>
+    <button onclick="showResponse('yes')">Da</button>
+    <button onclick="showResponse('no')">Nu</button>
+    <div id="response"></div>
+    
+    <script>
+        function showResponse(answer) {
+            let responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = '';
+
+            let text = document.createElement('p');
+            let image = document.createElement('img');
+            image.src = 'olly.jpg'; 
+            
+            // Aplică stilul direct pe elementul imagine
+            image.style.marginTop = "20px";
+            image.style.width = "310px"; // Modifică dimensiunea imaginii
+
+            if (answer === 'yes') {
+                text.innerText = 'Yay! 💍';
+                text.style.color = 'green';
+                text.style.fontSize = '28px';
+            } else {
+                text.innerText = 'Nu ma intereseaza.';
+                text.style.color = 'red'; 
+                text.style.fontSize = '28px';
+            }
+
+            responseDiv.appendChild(text);
+            responseDiv.appendChild(image);
+        }
+    </script>
+</body>
+</html>
